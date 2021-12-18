@@ -33,4 +33,4 @@ Las 3 partes:
 - Conectarse a una base de datos local de SQL
     - Utilizar PostgreSQL dado que es Open Source.
 
-Día #1 (18/12/219) - Este cambio viene desde mi repositorio local
+Día #1 (18/12/2021) - Este cambio viene desde mi repositorio local
