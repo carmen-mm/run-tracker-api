@@ -2,10 +2,10 @@ package com.example.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
-import javax.persistence.*;
+import javax.persistence.GenerationType;
 
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table (name = "usuario")
@@ -20,8 +20,8 @@ public class Usuario {
     private String email;
     
     
-	public Usuario(Long id, String nombre, String contraseña, String email) {
-		this.id = id;
+	public Usuario(String nombre, String contraseña, String email) {
+
 		this.nombre = nombre;
 		this.contraseña = contraseña;
 		this.email = email;
