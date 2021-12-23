@@ -111,7 +111,6 @@ public class UsuarioService implements UsuarioRepository {
 
 	@Override
 	public <S extends Usuario> S save(S entity) {
-		// TODO Auto-generated method stub
 		return usuarioRepository.save(entity);
 	}
 
