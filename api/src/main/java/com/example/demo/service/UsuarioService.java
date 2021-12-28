@@ -192,5 +192,5 @@ public class UsuarioService implements UsuarioRepository {
 		return null;
 	}
 	
-	//crear los métodos básico de CRUD
+	
 }
