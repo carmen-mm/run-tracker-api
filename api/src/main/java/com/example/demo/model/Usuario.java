@@ -1,13 +1,11 @@
 package com.example.demo.model;
 
-import java.util.Collection;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.Table;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -23,22 +21,17 @@ public class Usuario {
 	private String contraseña;
 	private String email;
 	
-/*	@OnetoOne
-	@JoinTable(
-			name = "usuarios_roles",
-			joinColumns = @JoinColumn(name = "usuario_id",referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name = "rol_id",referencedColumnName = "id")
-			)
-*/ 			
-	private Collection<Rol> roles;
+	@OneToOne
+	@JoinColumn(name = "id_rol")
+	private Rol rol;
 
-	public Usuario(Long id, String nombre, String contraseña, String email, Collection<Rol> roles) {
+	public Usuario(Long id, String nombre, String contraseña, String email,Rol rol) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.contraseña = contraseña;
 		this.email = email;
-		this.roles = roles;
+		this.rol = rol;
 	}
 
 	public Long getId() {
@@ -73,12 +66,12 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public Collection<Rol> getRoles() {
-		return roles;
+	public Rol getRol() {
+		return rol;
 	}
 
-	public void setRoles(Collection<Rol> roles) {
-		this.roles = roles;
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 
 }
