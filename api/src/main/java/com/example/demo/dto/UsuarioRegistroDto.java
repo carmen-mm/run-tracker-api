@@ -48,6 +48,10 @@ public class UsuarioRegistroDto {
 	public UsuarioRegistroDto() {
 	
 	}
+	public UsuarioRegistroDto(String email) {
+		super();
+		this.email = email;
+	}
 	
 	
 	
