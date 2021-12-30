@@ -22,6 +22,12 @@ public class Rol {
 		this.nombre = nombre;
 	}
 
+	public Rol(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+
+
 	public Rol() {
 		super();
 	}
@@ -40,6 +46,11 @@ public class Rol {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Object stream() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

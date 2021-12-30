@@ -3,6 +3,7 @@ package com.example.demo.model;
 import javax.persistence.Entity;
 
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -10,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Usuario {
 
 	@Id
@@ -20,18 +21,31 @@ public class Usuario {
 	private String nombre;
 	private String contraseña;
 	private String email;
-	
+
 	@OneToOne
 	@JoinColumn(name = "id_rol")
 	private Rol rol;
 
-	public Usuario(Long id, String nombre, String contraseña, String email,Rol rol) {
+	public Usuario(Long id, String nombre, String contraseña, String email, Rol rol) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.contraseña = contraseña;
 		this.email = email;
 		this.rol = rol;
+	}
+
+	
+	public Usuario(String nombre, String contraseña, String email, Rol rol) {
+		super();
+		this.nombre = nombre;
+		this.contraseña = contraseña;
+		this.email = email;
+		this.rol = rol;
+	}
+
+	public Usuario() {
+
 	}
 
 	public Long getId() {
