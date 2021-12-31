@@ -48,9 +48,5 @@ public class Rol {
 		this.nombre = nombre;
 	}
 
-	public Object stream() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

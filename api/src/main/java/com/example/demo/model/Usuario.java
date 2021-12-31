@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 
 import javax.persistence.Table;
@@ -19,28 +20,28 @@ public class Usuario {
 	private Long id;
 
 	private String nombre;
-	private String contraseña;
 	private String email;
+	private String contraseña;
 
-	@OneToOne
-	@JoinColumn(name = "id_rol")
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name = "id_rol" )
 	private Rol rol;
 
-	public Usuario(Long id, String nombre, String contraseña, String email, Rol rol) {
+	public Usuario(Long id, String nombre, String email, String contraseña, Rol rol) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.contraseña = contraseña;
 		this.email = email;
+		this.contraseña = contraseña;
 		this.rol = rol;
 	}
 
 	
-	public Usuario(String nombre, String contraseña, String email, Rol rol) {
+	public Usuario(String nombre, String email, String contraseña, Rol rol) {
 		super();
 		this.nombre = nombre;
-		this.contraseña = contraseña;
 		this.email = email;
+		this.contraseña = contraseña;
 		this.rol = rol;
 	}
 

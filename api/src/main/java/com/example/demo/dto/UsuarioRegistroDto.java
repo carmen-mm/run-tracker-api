@@ -4,8 +4,8 @@ public class UsuarioRegistroDto {
 
 	private Long id;
 	private String nombre;
-	private String contraseña;
 	private String email;
+	private String contraseña;
 	
 	public Long getId() {
 		return id;
@@ -31,18 +31,18 @@ public class UsuarioRegistroDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public UsuarioRegistroDto(Long id, String nombre, String contraseña, String email) {
+	public UsuarioRegistroDto(Long id, String nombre, String email,String contraseña) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.contraseña = contraseña;
 		this.email = email;
+		this.contraseña = contraseña;
 	}
-	public UsuarioRegistroDto(String nombre, String contraseña, String email) {
+	public UsuarioRegistroDto(String nombre,String email, String contraseña) {
 		super();
 		this.nombre = nombre;
-		this.contraseña = contraseña;
 		this.email = email;
+		this.contraseña = contraseña;
 	}
 
 	public UsuarioRegistroDto() {
