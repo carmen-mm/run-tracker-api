@@ -16,17 +16,9 @@ public class Rol {
 
 	private String nombre;
 
-	public Rol(Long id, String nombre) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-	}
-
 	public Rol(String nombre) {
-		super();
 		this.nombre = nombre;
 	}
-
 
 	public Rol() {
 		super();

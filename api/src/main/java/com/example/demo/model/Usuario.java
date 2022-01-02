@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-@Entity
+@Entity // Esto le dice a Hibernate que haga una tabla de esta clase
 @Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Usuario {
 
@@ -21,27 +21,26 @@ public class Usuario {
 
 	private String nombre;
 	private String email;
-	private String contraseña;
+	private String password;
 
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "id_rol" )
 	private Rol rol;
 
-	public Usuario(Long id, String nombre, String email, String contraseña, Rol rol) {
+	public Usuario(Long id, String nombre, String email, String password, Rol rol) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
-		this.contraseña = contraseña;
+		this.password = password;
 		this.rol = rol;
 	}
 
 	
-	public Usuario(String nombre, String email, String contraseña, Rol rol) {
-		super();
+	public Usuario(String nombre, String email, String password, Rol rol) {
 		this.nombre = nombre;
 		this.email = email;
-		this.contraseña = contraseña;
+		this.password = password;
 		this.rol = rol;
 	}
 
@@ -65,12 +64,12 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getEmail() {
