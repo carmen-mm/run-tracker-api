@@ -2,18 +2,13 @@ package com.example.demo.dto;
 
 public class UsuarioRegistroDto {
 
-	private Long id;
 	private String nombre;
 	private String email;
 	private String password;
-	private String rol;
+	private String nombre_rol;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -32,17 +27,14 @@ public class UsuarioRegistroDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public UsuarioRegistroDto(Long id, String nombre, String email,String password) {
-		this.id = id;
+	public UsuarioRegistroDto(String nombre, String email,String password, String nombre_rol) {
+		
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
+		this.nombre_rol = nombre_rol;
 	}
-	public UsuarioRegistroDto(String nombre,String email, String password) {
-		this.nombre = nombre;
-		this.email = email;
-		this.password = password;
-	}
+	
 
 	public UsuarioRegistroDto() {
 	
@@ -50,13 +42,11 @@ public class UsuarioRegistroDto {
 	public UsuarioRegistroDto(String email) {
 		this.email = email;
 	}
-	public String getRol() {
-		return rol;
+	public String getNombre_rol() {
+		return nombre_rol;
 	}
-	public void setRol(String rol) {
-		this.rol = rol;
+	public void setNombre_rol(String nombre_rol) {
+		this.nombre_rol = nombre_rol;
 	}
-	
-	
-	
+		
 }
