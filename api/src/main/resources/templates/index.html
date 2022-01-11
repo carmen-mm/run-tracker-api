@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="utf-8">
 <title>RUN TRACKER</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1> BIENVENIDOS A RUN TRACKER</h1>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Registro y inicio de sesión</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+	<div class="container">
+		<h1> BIENVENIDOS A RUN TRACKER</h1>
+		<br>
+		<h4>
+			Hola <span th:text ="${#authentication.getPrincipal().getUsername()}"></span>
+			<span th:text="${#authentication.getPrincipal().authorities}"></span>
+		</h4>
+
+		<br> <br>
+
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>PLAN DE ENTRENAMIENTO</th>
+					<th>PLAN DE NUTRICION</th>
+					<th>REGISTRO DE TIEMPOS</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr >
+					<td>Rutinas adaptadas a tu objetivo <br> si sos corredor elige tu rutina <br> si sos entrenador crea una rutina</td>
+					<td>Calorías y macronutrientes por semana</td>
+					<td>Si sos corredor registra tus tiempos <br> si sos entrenador ver tiempos de tus corredores <br>
+					Estadísticas de los tiempos</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
 
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
