@@ -89,5 +89,4 @@ public class PlanEntrenamiento {
 	public void setFecha_inicio(Date fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-
 }
