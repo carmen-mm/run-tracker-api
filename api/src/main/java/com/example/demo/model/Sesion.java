@@ -29,8 +29,8 @@ public class Sesion {
     private List<PlanEntrenamiento> planes = new ArrayList<>();
 	
 	public Sesion() {
-
 	}
+	
 	public Sesion(String nombre, Float km_diario, String tiempo, String indicaciones, Boolean estado) {
 		this.nombre = nombre;
 		this.km_diario = km_diario;
