@@ -13,14 +13,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PlanEntrenamientoServicio{
 
 	@Autowired
-	PlanEntrenamientoRepository planEntranamientoRepositoy;
+	PlanEntrenamientoRepository planEntrenamientoRepositoy;
 	
 	public List<PlanEntrenamiento> obtenerPlanes(){
-		return planEntranamientoRepositoy.findAll();	
+		return planEntrenamientoRepositoy.findAll();	
 	}
 	
 	public PlanEntrenamiento guardarPlan (PlanEntrenamiento plan){
-		return  planEntranamientoRepositoy.save(plan);
+		return  planEntrenamientoRepositoy.save(plan);
+	}
+	
+	public void eliminarPlan (Long id){
+		planEntrenamientoRepositoy.deleteById(id);
 	}
 	
 }
