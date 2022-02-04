@@ -12,7 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity // Esto le dice a Hibernate que haga una tabla de esta clase
-@Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = "email")) // La restricción es que el email es único, no se pueden repetir
 public class Usuario {
 
 	@Id
