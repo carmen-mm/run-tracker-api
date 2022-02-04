@@ -11,7 +11,7 @@
 		<div class="container">
 			<div class="navbar-header">
 			
-				<a class="navbar-brand" href="#" th:href="@{/}">Registro y inicio de sesión</a>
+				<a class="navbar-brand" href="#" >Planes de Entrenamientos</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -38,22 +38,33 @@
 			<thead class="table-dark">
 				<tr>
 					<th>PLAN DE ENTRENAMIENTO</th>
-					<th>PLAN DE NUTRICION</th>
-					<th>REGISTRO DE TIEMPOS</th>
+					
 				</tr>
 			</thead>
 			<tbody>
 				<tr >
-					<td>Rutinas adaptadas a tu objetivo 
-						<br> si sos corredor elige tu rutina <a href="#" th:href="@{/planes/obtenerPlanes}"> aquí</a> 
-						<br> si sos entrenador crea una rutina<a href="#" th:href="@{/planes/guardar }"> aquí</a> </td>
-					<td>Calorías y macronutrientes por semana 
-					<br><a href="#" > ver recomendaciones</a></td>
-					<td>Si sos corredor registra tus tiempos <a href="#" > aquí</a>
-					  <br> si sos entrenador ver tiempos de tus corredores <a href="#"> aquí</a> <br>
-					Estadísticas de los tiempos</td>
+					<td>Elegir el Plan más conveniente
 					
 				</tr>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Nombre</th>
+			      <th scope="col">KM</th>
+			      <th scope="col">Observaciones</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="planes :${planes}">
+			      <th scope="row">1</th>
+			      <td th:text="${planes.nombre}"></td>
+			      <td th:text="${planes.kms}"></td>
+			      <td th:text="${planes.observaciones}"></td>
+			    </tr>
+			  
+			  </tbody>
+			</table>
 			</tbody>
 		</table>
 	</div>
