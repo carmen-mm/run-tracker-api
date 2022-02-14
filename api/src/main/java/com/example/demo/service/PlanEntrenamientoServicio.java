@@ -6,6 +6,7 @@ import com.example.demo.model.PlanEntrenamiento;
 import com.example.demo.repository.PlanEntrenamientoRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,18 +14,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PlanEntrenamientoServicio{
 
 	@Autowired
-	PlanEntrenamientoRepository planEntrenamientoRepositoy;
+	PlanEntrenamientoRepository planEntrenamientoRepository;
 	
 	public List<PlanEntrenamiento> obtenerPlanes(){
-		return planEntrenamientoRepositoy.findAll();	
+		return planEntrenamientoRepository.findAll();	
+	}
+	
+	public Optional<PlanEntrenamiento> obtenerUno(Long id){
+		return planEntrenamientoRepository.findById(id);	
 	}
 	
 	public PlanEntrenamiento guardarPlan (PlanEntrenamiento plan){
-		return  planEntrenamientoRepositoy.save(plan);
+		return  planEntrenamientoRepository.save(plan);
 	}
 	
 	public void eliminarPlan (Long id){
-		planEntrenamientoRepositoy.deleteById(id);
+		planEntrenamientoRepository.deleteById(id);
 	}
 	
 }

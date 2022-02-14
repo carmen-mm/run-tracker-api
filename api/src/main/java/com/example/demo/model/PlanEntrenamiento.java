@@ -23,6 +23,8 @@ public class PlanEntrenamiento {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	
+
 	private String nombre;
 	private Long kms;
 	private String observaciones;
@@ -41,12 +43,30 @@ public class PlanEntrenamiento {
 	
 	}
 	
+	public PlanEntrenamiento(String nombre, Long kms, String observaciones, Date fecha_inicio, List<Sesion> sesiones) {
+		super();
+		this.nombre = nombre;
+		this.kms = kms;
+		this.observaciones = observaciones;
+		this.fecha_inicio = fecha_inicio;
+		this.sesiones = sesiones;
+	}
 	public PlanEntrenamiento(String nombre, Long kms, String observaciones) {
 		super();
 		this.nombre = nombre;
 		this.kms = kms;
 		this.observaciones = observaciones;
 	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+
 	public String getNombre() {
 		return nombre;
 	}
