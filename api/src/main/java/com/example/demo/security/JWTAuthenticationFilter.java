@@ -24,11 +24,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	private static final String ISSUER_INFO = null;
-	private static final long TOKEN_EXPIRATION_TIME = 0;
-	private static final byte[] SUPER_SECRET_KEY = null;
-	private static final String HEADER_AUTHORIZACION_KEY = null;
-	private static final String TOKEN_BEARER_PREFIX = null;
+	private static final String ISSUER_INFO = "https://www.runTracker.com/";
+	private static final long TOKEN_EXPIRATION_TIME = 864_000_000; //10 días
+	private static final String SUPER_SECRET_KEY = "1234";
+	private static final String HEADER_AUTHORIZACION_KEY = "Authorization";
+	private static final String TOKEN_BEARER_PREFIX = "Bearer";
 	private AuthenticationManager authenticationManager;
 
 	public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {

@@ -17,9 +17,9 @@ import io.jsonwebtoken.Jwts;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 	
-	private static final String HEADER_AUTHORIZACION_KEY = null;
-	private static final String TOKEN_BEARER_PREFIX = null;
-	private static final byte[] SUPER_SECRET_KEY = null;
+	private static final String HEADER_AUTHORIZACION_KEY = "Authorization";
+	private static final String TOKEN_BEARER_PREFIX = "Bearer";
+	private static final String SUPER_SECRET_KEY = "1234";
 
 	public JWTAuthorizationFilter(AuthenticationManager authManager) {
 		super(authManager);
